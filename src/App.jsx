@@ -250,7 +250,7 @@ function Neon() {
 
       <mesh
         rotation={[-Math.PI / 2, 0, -Math.PI * 1.8]}
-        position={[-1.7, 0.03, 4]}
+        position={[-1.7, 0.02, 4]}
       >
         <cylinderGeometry args={[0.02, 0.02, 1.5, 32]} />
         <meshStandardMaterial
@@ -262,7 +262,7 @@ function Neon() {
 
       <mesh
         rotation={[-Math.PI / 2, 0, -Math.PI * 0.05]}
-        position={[-1.2, 0.03, 2.2]}
+        position={[-1.2, 0.02, 2.2]}
       >
         <cylinderGeometry args={[0.02, 0.02, 2, 32]} />
         <meshStandardMaterial
@@ -275,7 +275,7 @@ function Neon() {
       <mesh
         ref={neon2Ref}
         rotation={[-Math.PI / 2, 0, -Math.PI * 0.9]}
-        position={[1.2, 0.03, 1.5]}
+        position={[1.2, 0.02, 1.5]}
       >
         <cylinderGeometry args={[0.02, 0.02, 2, 32]} />
         <meshStandardMaterial
