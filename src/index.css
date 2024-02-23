@@ -4,14 +4,11 @@
 
 * {
   box-sizing: border-box;
-  background-color: "#000000";
 }
 
 html,
 body,
 #root {
-  /* margin: 0;
-  padding: 0; */
   position: fixed;
   top: 0;
   left: 0;
@@ -22,7 +19,6 @@ body,
 }
 
 body {
-  background-color: "#000000";
   color: white;
   user-select: none;
 }
