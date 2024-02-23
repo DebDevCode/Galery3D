@@ -15,50 +15,60 @@ import { useLocation, useRoute } from "wouter";
 
 const GOLDENRATIO = 1.61803398875;
 
-export const App = ({ images }) => (
-  <Canvas dpr={[1, 2]} camera={{ fov: 70, position: [0, 2, 15] }}>
-    {/* <CameraControls /> */}
-    {/* <ambientLight /> */}
-    <color attach="background" args={["#191920"]} />
-    <fog attach="fog" args={["#191920", 0, 15]} />
-    <group position={[0, -0.5, 0]}>
-      <mesh rotation={[Math.PI / 2, 0, 0]} position={[0, GOLDENRATIO, 0]}>
-        <planeGeometry args={[50, 50]} />
-        <MeshReflectorMaterial
-          blur={[300, 100]}
-          resolution={2048}
-          mirror={1}
-          mixBlur={1}
-          mixStrength={80}
-          roughness={1}
-          depthScale={1.2}
-          minDepthThreshold={0.4}
-          maxDepthThreshold={1.4}
-          color="#090909"
-          metalness={0.5}
-        />
-      </mesh>
-      <Frames images={images} />
-      <mesh rotation={[-Math.PI / 2, 0, 0]}>
-        <planeGeometry args={[50, 50]} />
-        <MeshReflectorMaterial
-          blur={[300, 100]}
-          resolution={2048}
-          mixBlur={1}
-          mixStrength={80}
-          roughness={1}
-          depthScale={1.23}
-          minDepthThreshold={0.4}
-          maxDepthThreshold={1.4}
-          color="#060606"
-          metalness={1.12}
-        />
-      </mesh>
-      <Neon />
-    </group>
-    <Environment preset="city" />
-  </Canvas>
-);
+export const App = ({ images }) => {
+  const windowWidth = useRef(window.innerWidth);
+
+  const handleResize = () => {
+    if (windowWidth.current >= 1000) return { fov: 70, position: [0, 2, 15] };
+    if (windowWidth.current <= 600) return { fov: 120, position: [0, 2, 15] };
+    if (windowWidth.current <= 1000) return { fov: 100, position: [0, 2, 15] };
+  };
+
+  return (
+    <Canvas dpr={[1, 2]} camera={handleResize()}>
+      {/* <CameraControls /> */}
+      {/* <ambientLight /> */}
+      <color attach="background" args={["black"]} />
+      <fog attach="fog" args={["#191920", 0, 15]} />
+      <group position={[0, -0.5, 0]}>
+        {/* <mesh rotation={[Math.PI / 2, 0, 0]} position={[0, GOLDENRATIO, 0]}>
+          <planeGeometry args={[50, 50]} />
+          <MeshReflectorMaterial
+            blur={[300, 100]}
+            resolution={2048}
+            mirror={1}
+            mixBlur={1}
+            mixStrength={80}
+            roughness={1}
+            depthScale={1.2}
+            minDepthThreshold={0.4}
+            maxDepthThreshold={1.4}
+            color="#090909"
+            metalness={0.5}
+          />
+        </mesh> */}
+        <Frames images={images} />
+        <mesh rotation={[-Math.PI / 2, 0, 0]}>
+          <planeGeometry args={[50, 50]} />
+          <MeshReflectorMaterial
+            blur={[300, 100]}
+            resolution={2048}
+            mixBlur={1}
+            mixStrength={80}
+            roughness={1}
+            depthScale={1.23}
+            minDepthThreshold={0.4}
+            maxDepthThreshold={1.4}
+            color="#060606"
+            metalness={1.12}
+          />
+        </mesh>
+        <Neon />
+      </group>
+      <Environment preset="city" />
+    </Canvas>
+  );
+};
 
 function Frames({
   images,
