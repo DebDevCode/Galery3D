@@ -241,10 +241,10 @@ function Neon() {
         <meshStandardMaterial
           // emissive="purple"
           // color="purple"
-          // emissiveIntensity={10}
-          color="#c23a67"
-          emissive="#7a042b"
-          emissiveIntensity={10}
+          // emissiveIntensity={3}
+          color="#ffffff"
+          emissive="#ffffff"
+          emissiveIntensity={3}
         />
       </mesh>
 
@@ -254,9 +254,9 @@ function Neon() {
       >
         <cylinderGeometry args={[0.02, 0.02, 1.5, 32]} />
         <meshStandardMaterial
-          color="#c23a67"
-          emissive="#7a042b"
-          emissiveIntensity={10}
+          color="#ffffff"
+          emissive="#ffffff"
+          emissiveIntensity={3}
         />
       </mesh>
 
@@ -266,9 +266,9 @@ function Neon() {
       >
         <cylinderGeometry args={[0.02, 0.02, 2, 32]} />
         <meshStandardMaterial
-          color="#c23a67"
-          emissive="#7a042b"
-          emissiveIntensity={10}
+          color="#ffffff"
+          emissive="#ffffff"
+          emissiveIntensity={3}
         />
       </mesh>
 
@@ -281,9 +281,9 @@ function Neon() {
         <meshStandardMaterial
           // emissive={isFlashing ? "#FFFFFF" : null}
           // emissiveIntensity={isFlashing ? 0 : 1}
-          color="#c23a67"
-          emissive="#7a042b"
-          emissiveIntensity={10}
+          color="#ffffff"
+          emissive="#ffffff"
+          emissiveIntensity={3}
         />
       </mesh>
 
@@ -294,9 +294,9 @@ function Neon() {
         >
           <cylinderGeometry args={[0.02, 0.02, 2, 32]} />
           <meshStandardMaterial
-            color="#c23a67"
-            emissive="#7a042b"
-            emissiveIntensity={10}
+            color="#ffffff"
+            emissive="#ffffff"
+            emissiveIntensity={3}
           />
         </mesh>
       </group>
@@ -304,7 +304,7 @@ function Neon() {
       <group>
         <Tube
           rotation={[-0.3, 0, Math.PI / 2]}
-          position={[2.16, -0.95, 3.895]}
+          position={[2.15, -0.95, 3.895]}
           args={[
             new THREE.CatmullRomCurve3([
               new THREE.Vector3(1, 0, 0),
@@ -312,13 +312,13 @@ function Neon() {
               // Ajoutez plus de points pour créer la forme de votre néon
             ]), // Ceci est la courbe qui définit la forme du néon
             64, // segments
-            0.012, // rayon
+            0.02, // rayon
           ]}
         >
           <meshStandardMaterial
-            color="#c23a67"
-            emissive="#7a042b"
-            emissiveIntensity={10}
+            color="#ffffff"
+            emissive="#ffffff"
+            emissiveIntensity={3}
           />
         </Tube>
         {/* <Tube
@@ -369,25 +369,22 @@ function Neon() {
           ]}
         >
           <meshStandardMaterial
-            color="#c23a67"
-            emissive="#7a042b"
-            emissiveIntensity={10}
+            color="#ffffff"
+            emissive="#ffffff"
+            emissiveIntensity={3}
           />
         </Tube>
       </group>
 
       <mesh
-        ref={neon2Ref}
         rotation={[-Math.PI / 2, 0, -Math.PI * 0.9]}
-        position={[2.5, 0.03, 0.7]}
+        position={[2.5, 0.02, 0.7]}
       >
         <cylinderGeometry args={[0.02, 0.02, 2, 32]} />
         <meshStandardMaterial
-          // emissive={isFlashing ? "#FFFFFF" : null}
-          // emissiveIntensity={isFlashing ? 0 : 1}
-          color="#c23a67"
-          emissive="#7a042b"
-          emissiveIntensity={10}
+          color="#ffffff"
+          emissive="#ffffff"
+          emissiveIntensity={3}
         />
       </mesh>
     </group>
