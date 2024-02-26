@@ -239,8 +239,8 @@ function Neon() {
       <mesh rotation={[0, 0, 0.5]} position={[-0.035, 0.445, -0.6]}>
         <cylinderGeometry args={[0.012, 0.012, 1, 32]} />
         <meshStandardMaterial
-          // emissive="purple"
-          // color="purple"
+          // color="#c23a67"
+          // emissive="#7a042b"
           // emissiveIntensity={3}
           color="#ffffff"
           emissive="#ffffff"
