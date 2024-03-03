@@ -27,7 +27,7 @@ export const App = ({ images }) => {
   return (
     <Canvas dpr={[1, 2]} camera={handleResize()}>
       {/* <CameraControls /> */}
-      {/* <ambientLight /> */}
+      <ambientLight />
       <color attach="background" args={["black"]} />
       <fog attach="fog" args={["#191920", 0, 15]} />
       <group position={[0, -0.5, 0]}>
